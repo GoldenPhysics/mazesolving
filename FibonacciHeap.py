@@ -99,11 +99,9 @@ class FibHeap:
         if self.minnode.child != None:
             c = self.minnode.child;
             
-            while True:
+            while c != self.minnode.child:
                 c.parent = None;
                 c = c.next;
-                if c == self.minnode.child:
-                    break;
 
             self.minnode.child = None;
             self.minnode.insert(c);
